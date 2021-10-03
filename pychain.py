@@ -49,7 +49,21 @@ import hashlib
 # @TODO
 # Create a Record Data Class that consists of the `sender`, `receiver`, and
 # `amount` attributes
-# YOUR CODE HERE
+@dataclass 
+class Record:
+    """A class used to represent the data or the record inside of a block
+    
+    Attributes:
+    sender : str
+        a  string to identify the sender
+    receiver : str
+        a  string to identify the receiver
+    amount : float
+        a  float to identify the amount of the record
+    """
+    sender: str 
+    receiver: str
+    amount: float
 
 
 ################################################################################
@@ -68,7 +82,20 @@ class Block:
 
     # @TODO
     # Rename the `data` attribute to `record`, and set the data type to `Record`
-    data: Any
+      """A Block class help us identify the data in the blockchain.
+    
+    Attributes:
+    record : Record
+        is record of the hash or block.
+    creator_id : int
+        an integer to identify the creator's ID.
+    timestamp : str
+        a str to identify the date/time the block is created in UTC format.
+    nonce: str
+        the number added to the hash or block, it's also called the "number only used once".
+    """
+    
+    record: Record
 
     creator_id: int
     prev_hash: str = 0
